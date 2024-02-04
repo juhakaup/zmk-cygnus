@@ -14,7 +14,7 @@
 
         bluetooth {
             bindings = <&to 3>;
-            key-positions = <38 39>;
+            key-positions = <36 41>;
         };
     };
 
@@ -70,10 +70,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB   &kp N1     &kp N2     &kp N3  &kp N4  &kp N5    &kp N6     &kp N7     &kp N8          &kp N9          &kp N0     &kp BSPC
-&trans    &trans     &trans     &trans  &trans  &trans    &trans     &trans     &trans          &kp UP_ARROW    &trans     &trans
-&kp NUBS  &kp GRAVE  &kp EQUAL  &trans  &trans  &trans    &kp SLASH  &kp MINUS  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp NUHS
-                                &trans  &trans  &trans    &trans     &trans     &trans
+&kp TAB   &kp N1     &kp N2     &kp N3  &kp N4  &kp N5    &kp N6     &kp N7             &kp N8            &kp N9          &kp N0                &kp BSPC
+&trans    &trans     &trans     &trans  &trans  &trans    &trans     &kp RIGHT_BRACKET  &kp LEFT_BRACKET  &kp UP_ARROW    &kp NON_US_BACKSLASH  &trans
+&kp NUBS  &kp GRAVE  &kp EQUAL  &trans  &trans  &trans    &kp SLASH  &kp MINUS          &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT             &kp NUHS
+                                &trans  &trans  &trans    &trans     &trans             &trans
             >;
         };
 
@@ -85,10 +85,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5           &kp F6     &kp F7     &kp F8    &kp F9         &kp F10   &kp BSPC
-&kp LCTRL  &trans  &trans  &trans  &trans  &trans           &kp MINUS  &kp EQUAL  &kp LBKT  &kp PG_UP      &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans  &trans  &trans  &trans  &trans           &kp UNDER  &kp PLUS   &kp HOME  &kp PAGE_DOWN  &kp END   &kp TILDE
-                           &trans  &trans  &kp BACKSPACE    &trans     &trans     &trans
+&kp TAB    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5           &kp F6     &kp F7    &kp F8    &kp F9         &kp F10   &kp BSPC
+&kp LCTRL  &trans  &trans  &trans  &trans  &trans           &trans     &trans    &trans    &kp PG_UP      &kp BSLH  &kp GRAVE
+&kp LSHFT  &trans  &trans  &trans  &trans  &trans           &kp UNDER  &kp PLUS  &kp HOME  &kp PAGE_DOWN  &kp END   &kp TILDE
+                           &trans  &trans  &kp BACKSPACE    &trans     &trans    &trans
             >;
         };
 
