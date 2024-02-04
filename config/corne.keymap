@@ -9,6 +9,41 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        bluetooth {
+            bindings = <&to 3>;
+            key-positions = <38 39>;
+        };
+    };
+
+    behaviors {
+        hrml: hrml {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRML";
+            bindings = <&none>, <&none>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <38 37 36 39 40 41 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 40 41>;
+        };
+
+        hrmr: hrmr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRMR";
+            bindings = <&none>, <&none>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <39 40 41 38 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+            quick-tap-ms = <175>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -23,7 +58,7 @@
 &kp TAB    &kp Q  &kp W            &kp E           &kp R               &kp T              &kp Y      &kp U              &kp I            &kp O            &kp P             &kp BSPC
 &kp LCTRL  &kp A  &mt RIGHT_ALT S  &mt LEFT_GUI D  &mt LEFT_SHIFT F    &kp G              &kp H      &mt RIGHT_SHIFT J  &mt RIGHT_GUI K  &mt RIGHT_ALT L  &kp SEMI          &kp SQT
 &kp LSHFT  &kp Z  &kp X            &kp C           &mt LEFT_CONTROL V  &kp B              &kp N      &mt RCTRL M        &kp COMMA        &kp DOT          &kp SINGLE_QUOTE  &kp ESC
-                                   &lt 3 ESC       &lt 2 TAB           &lt 1 BACKSPACE    &kp SPACE  &lt 2 DELETE       &lt 3 ENTER
+                                   &lt 4 ESC       &lt 2 TAB           &lt 1 BACKSPACE    &kp SPACE  &lt 2 DELETE       &lt 4 ENTER
             >;
         };
 
@@ -35,10 +70,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB   &kp N1    &kp N2     &kp N3  &kp N4  &kp N5    &kp N6     &kp N7     &kp N8          &kp N9          &kp N0     &kp BSPC
-&trans    &trans    &trans     &trans  &trans  &trans    &trans     &trans     &trans          &kp UP_ARROW    &trans     &trans
-&kp NUBS  &kp NUBS  &kp EQUAL  &trans  &trans  &trans    &kp SLASH  &kp MINUS  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp NUHS
-                               &trans  &trans  &trans    &trans     &trans     &trans
+&kp TAB   &kp N1     &kp N2     &kp N3  &kp N4  &kp N5    &kp N6     &kp N7     &kp N8          &kp N9          &kp N0     &kp BSPC
+&trans    &trans     &trans     &trans  &trans  &trans    &trans     &trans     &trans          &kp UP_ARROW    &trans     &trans
+&kp NUBS  &kp GRAVE  &kp EQUAL  &trans  &trans  &trans    &kp SLASH  &kp MINUS  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp NUHS
+                                &trans  &trans  &trans    &trans     &trans     &trans
             >;
         };
 
@@ -59,10 +94,19 @@
 
         layer_3 {
             bindings = <
-&trans  &bt BT_SEL 0         &bt BT_SEL 1         &bt BT_SEL 2         &bt BT_SEL 3         &bt BT_SEL 4               &trans               &trans               &trans               &trans          &bt BT_CLR        &trans
-&trans  &kp INTERNATIONAL_2  &kp INTERNATIONAL_3  &kp INTERNATIONAL_4  &kp INTERNATIONAL_5  &kp INTERNATIONAL_6        &kp INTERNATIONAL_7  &kp INTERNATIONAL_8  &kp INTERNATIONAL_9  &trans          &trans            &trans
-&trans  &kp TILDE2           &kp GRAVE            &kp PIPE             &kp INTERNATIONAL_1  &kp KP_LEFT_PARENTHESIS    &trans               &trans               &trans               &kp C_PREVIOUS  &kp K_PLAY_PAUSE  &kp C_NEXT
-                                                  &trans               &trans               &trans                     &trans               &trans               &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3         &bt BT_SEL 4    &trans  &trans  &trans  &trans          &bt BT_CLR        &trans
+&trans  &trans        &trans        &trans        &trans               &trans          &trans  &trans  &trans  &trans          &trans            &trans
+&trans  &kp TILDE2    &kp GRAVE     &kp PIPE      &kp INTERNATIONAL_1  &trans          &trans  &trans  &trans  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT
+                                    &trans        &trans               &trans          &trans  &trans  &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans          &trans          &trans     &trans    &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP
+&trans  &trans  &trans          &kp UP_ARROW    &trans     &trans    &trans      &trans    &trans      &kp UP_ARROW  &trans        &trans
+&trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans    &trans      &trans    &kp LEFT    &kp DOWN      &kp RIGHT     &trans
+                                &trans          &trans     &trans    &trans      &trans    &trans
             >;
         };
     };
