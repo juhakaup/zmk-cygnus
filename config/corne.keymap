@@ -27,7 +27,8 @@
             #binding-cells = <2>;
             tapping-term-ms = <1000>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <38 37 36 39 40 41 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 40 41>;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 36 37 38 39 40 41>;
+            hold-trigger-on-release;
         };
 
         hrmr: hrmr {
@@ -38,7 +39,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <1000>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <39 40 41 38 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+            hold-trigger-on-release;
         };
     };
 
@@ -83,10 +84,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5           &kp F6     &kp F7            &kp F8    &kp F9         &kp F10   &trans
-&trans  &trans  &trans  &trans  &trans  &trans           &trans     &kp LEFT_BRACKET  &trans    &kp PG_UP      &kp BSLH  &trans
-&trans  &trans  &trans  &trans  &trans  &trans           &kp UNDER  &kp PLUS          &kp HOME  &kp PAGE_DOWN  &kp END   &trans
-                        &trans  &trans  &kp BACKSPACE    &trans     &trans            &trans
+&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5           &kp F6      &kp F7     &kp F8    &kp F9         &kp F10   &trans
+&trans  &trans  &trans  &trans  &trans  &trans           &kp TILDE2  &kp TILDE  &trans    &kp PG_UP      &kp BSLH  &trans
+&trans  &trans  &trans  &trans  &trans  &trans           &kp UNDER   &kp PLUS   &kp HOME  &kp PAGE_DOWN  &kp END   &trans
+                        &trans  &trans  &kp BACKSPACE    &trans      &trans     &trans
             >;
         };
 
