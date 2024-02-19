@@ -18,18 +18,6 @@
         };
     };
 
-    behaviors {
-        hrml: hrml {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRML";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <225>;
-            flavor = "tap-preferred";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
